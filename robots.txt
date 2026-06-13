@@ -1,0 +1,9 @@
+# robots.txt — TalentCo
+# ⚠️ замени домен в Sitemap на свой реальный
+User-agent: *
+Allow: /
+
+# Технические артефакты не индексируем
+Disallow: /assets-src/
+
+Sitemap: https://talentco.ru/sitemap.xml

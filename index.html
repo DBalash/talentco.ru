@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  TalentCo — Dmitrii Balash · ПРЕМИУМ · СИНИЙ + PLAYFAIR/INTER    ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  ГДЕ ЧТО МЕНЯТЬ:                                                  ║
+  ║  1. ИМЯ / БРЕНД   → "TalentCo", "Dmitrii Balash"                  ║
+  ║  2. ПОРТРЕТ       → .portrait-ph (замени на <img src="...">)      ║
+  ║  3. ЛОГО КЛИЕНТОВ → .logo-ph (замени на реальные SVG/PNG)         ║
+  ║  4. КОНТАКТЫ      → .tg-btn (t.me/...) + .mail-btn (mailto:)      ║
+  ║  5. ЦЕНЫ          → блок .pricing (.price-amount)                 ║
+  ║  6. СТАТИСТИКА    → .stat-num (200+ / 8 лет / 40+)                ║
+  ║  7. УСЛУГИ        → .svc-card                                     ║
+  ║  8. ОТЗЫВЫ        → .tst карточки                                 ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="TalentCo — Dmitrii Balash. Карьерное консультирование и executive search для компаний России и СНГ. Найди лучших людей и вырасти быстрее.">
+<meta name="theme-color" content="#0B0A12">
+<!-- Базовая защита (работает на любом хостинге, в т.ч. GitHub Pages, где нельзя задать HTTP-заголовки) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<title>TalentCo — Dmitrii Balash · Карьерный консультант</title>
+
+<!-- ⚠️ ЗАМЕНИ домен на свой реальный во всех абсолютных URL ниже (canonical, og:url, og:image) -->
+<link rel="canonical" href="https://talentco.ru/">
+
+<!-- Иконки -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="application-name" content="TalentCo">
+<meta name="apple-mobile-web-app-title" content="TalentCo">
+
+<!-- PWA: установка на телефон -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Open Graph (Telegram, VK, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TalentCo">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://talentco.ru/">
+<meta property="og:title" content="TalentCo — Найди лучших людей и вырасти быстрее">
+<meta property="og:description" content="Dmitrii Balash: карьерное консультирование и executive search для IT и производства. Россия и СНГ. Первая 15-минутная диагностика — бесплатно.">
+<meta property="og:image" content="https://talentco.ru/og-cover.jpg">
+<meta property="og:image:secure_url" content="https://talentco.ru/og-cover.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TalentCo — Dmitrii Balash, карьерный консультант и рекрутер">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TalentCo — Найди лучших людей и вырасти быстрее">
+<meta name="twitter:description" content="Карьерное консультирование и executive search для IT и производства. Dmitrii Balash · Россия и СНГ.">
+<meta name="twitter:image" content="https://talentco.ru/og-cover.jpg">
+<meta name="twitter:image:alt" content="TalentCo — карьерный консультант Dmitrii Balash">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- SEO: микроразметка FAQ для Google (синхронизируй текст с секцией #faq) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько стоит работа и от чего зависит цена?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Разовая сессия — 5 000 ₽, карьерный пакет с сопровождением до оффера — 29 000 ₽, executive search для компаний — по проекту. Финальную смету подтверждаю после короткого звонка: цена зависит от задачи, сроков и уровня позиции."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как проходит работа — онлайн или очно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Полностью онлайн: видеозвонки и переписка между сессиями. Работаю по будням в часовом поясе МСК, но подстраиваюсь под клиентов из других регионов и стран СНГ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько времени занимает результат?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Разовая сессия даёт ясность уже за один разговор. Карьерный пакет — это месяц плотной работы до оффера. По подбору средний срок выхода на сильного кандидата — около 3 недель."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Есть ли гарантия на подбор кандидата?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. По executive search действует гарантия бесплатной замены, если кандидат не проходит испытательный срок. Условия и сроки фиксируем в договоре до старта."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что с конфиденциальностью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Всё, что обсуждаем, остаётся между нами. Не передаю резюме и детали переговоров третьим лицам, при необходимости подписываю NDA — особенно по работе с действующими сотрудниками компаний."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что входит в бесплатную диагностику?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "15 минут по видео или в Telegram: вы рассказываете задачу, я честно говорю, чем смогу помочь и в каком формате. Без презентаций и продаж — если не мой случай, так и скажу и подскажу, к кому обратиться."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- SEO: организация, персона и сайт (⚠️ замени домен/контакты на реальные) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://talentco.ru/#website",
+      "url": "https://talentco.ru/",
+      "name": "TalentCo",
+      "inLanguage": "ru-RU",
+      "publisher": { "@id": "https://talentco.ru/#org" }
+    },
+    {
+      "@type": ["ProfessionalService", "EmploymentAgency"],
+      "@id": "https://talentco.ru/#org",
+      "name": "TalentCo",
+      "alternateName": "TalentCo · Dmitrii Balash",
+      "description": "Карьерное консультирование и executive search для IT и производственных компаний России и СНГ.",
+      "url": "https://talentco.ru/",
+      "image": "https://talentco.ru/og-cover.jpg",
+      "logo": "https://talentco.ru/favicon.svg",
+      "priceRange": "₽₽",
+      "email": "alinsig21@gmail.com",
+      "knowsLanguage": ["ru"],
+      "founder": { "@id": "https://talentco.ru/#person" },
+      "employee": { "@id": "https://talentco.ru/#person" },
+      "areaServed": [
+        { "@type": "Country", "name": "Россия" },
+        { "@type": "Place", "name": "СНГ" }
+      ],
+      "sameAs": ["https://t.me/alferdmitry"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "alinsig21@gmail.com",
+        "url": "https://t.me/alferdmitry",
+        "availableLanguage": ["Russian"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги TalentCo",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "5000",
+            "itemOffered": { "@type": "Service", "name": "Разовая карьерная сессия", "description": "Диагностика карьерной ситуации и конкретные шаги на 1–3 месяца." }
+          },
+          {
+            "@type": "Offer",
+            "priceCurrency": "RUB",
+            "price": "29000",
+            "itemOffered": { "@type": "Service", "name": "Карьерный пакет", "description": "Сопровождение до оффера: сессии, переупаковка резюме и LinkedIn, мок-интервью, переговоры по офферу." }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Executive Search", "description": "Подбор топ-менеджеров для IT и производственных компаний с гарантией замены." }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://talentco.ru/#person",
+      "name": "Dmitrii Balash",
+      "jobTitle": "Карьерный консультант и рекрутер",
+      "description": "Восемь лет в подборе топ-менеджеров для IT и производства; карьерное консультирование и executive search.",
+      "url": "https://talentco.ru/",
+      "image": "https://talentco.ru/og-cover.jpg",
+      "email": "alinsig21@gmail.com",
+      "worksFor": { "@id": "https://talentco.ru/#org" },
+      "knowsAbout": [
+        "Карьерное консультирование",
+        "Executive search",
+        "Подбор топ-менеджеров",
+        "IT-рекрутмент",
+        "Подготовка к собеседованию",
+        "HR-консалтинг"
+      ],
+      "knowsLanguage": ["ru"],
+      "sameAs": ["https://t.me/alferdmitry"]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ─────────────  TOKENS  ───────────── */
+  :root {
+    --bg:        #0B0A12;
+    --bg-soft:   #12101D;
+    --surface:   rgba(255,255,255,0.04);
+    --surface-2: rgba(255,255,255,0.06);
+    --stroke:    rgba(255,255,255,0.10);
+    --stroke-2:  rgba(255,255,255,0.18);
+
+    --text:      #F4F2FA;
+    --muted:     #A39FB8;
+    --faint:     #9692AD;
+
+    --accent:    #2E8FD0;   /* акцентный текст/иконки на тёмном (5.6:1) */
+    --accent-2:  #0369A1;   /* глубокий навигацкий синий */
+    --on-accent: #FFFFFF;
+
+    --c1: #2E8FD0;   /* единый синий акцент */
+    --c2: #2E8FD0;   /* фокус-кольца, активные состояния */
+    --c3: #5BB0E8;   /* светлый синий */
+    --c4: #1E6FA8;   /* глубокий синий */
+
+    /* фоны под белый текст (кнопки/чипы) — глубокий синий, контраст ≥5.5:1 */
+    --grad-warm:   linear-gradient(135deg, #0B6EA8 0%, #064F7A 100%);
+    --grad-cool:   linear-gradient(135deg, #0E5C8C 0%, #07304E 100%);
+    /* светлый акцент для крупного текста на тёмном фоне */
+    --grad-text:   linear-gradient(120deg, #7BC0EE 0%, #3E9BD8 55%, #2E8FD0 100%);
+
+    --display: "Playfair Display", Georgia, serif;
+    --sans:    "Inter", system-ui, -apple-system, sans-serif;
+
+    --maxw: 1200px;
+    --pad:  clamp(20px, 5vw, 64px);
+    --radius: 22px;
+    --radius-sm: 14px;
+  }
+
+  /* ─────────────  RESET  ───────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    overflow-wrap: break-word;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  /* убираем 300ms задержку тапа на интерактивных элементах */
+  a, button, .btn, .faq-q, input, textarea, label, summary { touch-action: manipulation; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: rgba(46,143,208,0.4); color: #fff; }
+
+  /* видимый фокус для клавиатурной навигации (a11y) */
+  a:focus-visible, button:focus-visible, .burger:focus-visible,
+  label.burger:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto;
+    padding-left: max(var(--pad), env(safe-area-inset-left));
+    padding-right: max(var(--pad), env(safe-area-inset-right)); }
+
+  /* fluid section background tone */
+  .section { position: relative; padding: clamp(72px, 10vw, 140px) 0; }
+
+  /* eyebrow label */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted);
+    padding: 7px 14px; border-radius: 100px;
+    background: var(--surface); border: 1px solid var(--stroke);
+    margin-bottom: 26px;
+  }
+  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--grad-warm); box-shadow: 0 0 12px rgba(46,143,208,0.85); }
+
+  .h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 52px); line-height: 1.08;
+    letter-spacing: -0.02em; max-width: 16ch;
+  }
+  .h2 .grad { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .section-lead { color: var(--muted); font-size: clamp(16px,2vw,19px); max-width: 56ch; margin-top: 20px; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--sans); font-weight: 600; font-size: 15.5px;
+    padding: 15px 28px; border-radius: 100px; cursor: pointer;
+    border: 1px solid transparent; transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s, background .25s, border-color .25s;
+    will-change: transform;
+  }
+  .btn:active { transform: translateY(1px) scale(.99); }
+  .btn-primary {
+    color: #FFFFFF; background: var(--grad-warm);
+    box-shadow: 0 8px 28px rgba(3,105,161,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(3,105,161,0.5), inset 0 1px 0 rgba(255,255,255,0.45); }
+  .btn-ghost {
+    color: var(--text); background: var(--surface); border-color: var(--stroke-2);
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover { background: var(--surface-2); border-color: var(--stroke-2); transform: translateY(-2px); }
+  .btn .arr { transition: transform .25s; }
+  .btn:hover .arr { transform: translateX(4px); }
+
+  /* ─────────────  ANIMATED BACKGROUND BLOBS  ───────────── */
+  .bg-fx { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .38; }
+  .blob.b1 { width: 46vw; height: 46vw; left: -10vw; top: -8vw; background: radial-gradient(circle at 30% 30%, #0369A1, transparent 70%); animation: float1 22s ease-in-out infinite; }
+  .blob.b2 { width: 42vw; height: 42vw; right: -12vw; top: 18vh; background: radial-gradient(circle at 40% 40%, #1E6FA8, transparent 70%); animation: float2 26s ease-in-out infinite; }
+  .blob.b3 { width: 38vw; height: 38vw; left: 20vw; bottom: -16vw; background: radial-gradient(circle at 50% 50%, #0B4F7A, transparent 70%); animation: float3 30s ease-in-out infinite; }
+  .bg-grid { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  }
+  /* subtle grain over everything */
+  .bg-noise { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(6vw,5vh) scale(1.12)} }
+  @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-5vw,4vh) scale(1.08)} }
+  @keyframes float3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(4vw,-5vh) scale(1.15)} }
+
+  /* ─────────────  NAV  ───────────── */
+  .nav { position: sticky; top: 0; z-index: 100; transition: padding .3s; }
+  .nav-inner {
+    max-width: var(--maxw); margin: max(14px, env(safe-area-inset-top)) auto 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px 12px 22px; border-radius: 100px;
+    background: rgba(15,13,26,0.55); border: 1px solid var(--stroke);
+    backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    transition: box-shadow .3s, background .3s;
+  }
+  .nav.scrolled .nav-inner { background: rgba(15,13,26,0.8); box-shadow: 0 10px 40px rgba(0,0,0,0.55); }
+  .wordmark { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+  .wordmark .mark { width: 28px; height: 28px; border-radius: 9px; background: var(--grad-warm); box-shadow: 0 4px 14px rgba(3,105,161,0.5); display: grid; place-items: center; font-family: var(--display); font-size: 15px; color: #FFFFFF; }
+  .nav-links { display: flex; align-items: center; gap: 6px; }
+  .nav-links a:not(.nav-cta) { font-size: 14.5px; font-weight: 500; color: var(--muted); padding: 9px 14px; border-radius: 100px; transition: color .2s, background .2s; }
+  .nav-links a:not(.nav-cta):hover { color: var(--text); background: var(--surface); }
+  .nav-cta { font-size: 14.5px; font-weight: 600; padding: 12px 22px; border-radius: 100px; background: var(--grad-warm); color: #FFFFFF; box-shadow: 0 6px 18px rgba(3,105,161,0.35); transition: transform .2s, box-shadow .2s; }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(3,105,161,0.5); }
+
+  .burger { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; min-width: 44px; min-height: 44px; box-sizing: border-box; padding: 8px; }
+  .burger span { display: block; width: 24px; height: 2px; border-radius: 2px; background: var(--text); transition: .3s; }
+  .nav-toggle { display: none; }
+
+  /* ─────────────  HERO  ───────────── */
+  .hero { position: relative; padding: clamp(56px,9vw,110px) 0 clamp(60px,8vw,96px); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px,5vw,64px); align-items: center; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 26px;
+    flex-wrap: wrap; max-width: 100%;
+    font-size: 13px; font-weight: 600; color: var(--text);
+    padding: 8px 8px 8px 8px; border-radius: 100px;
+    background: var(--surface); border: 1px solid var(--stroke);
+  }
+  .hero-badge .pill { font-size: 11.5px; letter-spacing:.04em; padding: 4px 10px; border-radius: 100px; background: var(--grad-warm); color: #FFFFFF; font-weight: 700; }
+  .hero-badge .stars { color: #FFC15E; letter-spacing: 1px; }
+
+  .hero h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(40px, 6.6vw, 80px); line-height: 0.98;
+    letter-spacing: -0.03em; margin-bottom: 26px;
+  }
+  .hero h1 .grad { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-lead { font-size: clamp(16px,2.1vw,20px); color: var(--muted); max-width: 50ch; margin-bottom: 36px; }
+  .hero-lead b { color: var(--text); font-weight: 700; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+
+  .hero-trust { display: flex; gap: clamp(20px,4vw,44px); flex-wrap: wrap; }
+  .hero-trust .t { }
+  .hero-trust .t-num { font-family: var(--display); font-weight: 600; font-size: clamp(24px,3vw,34px); line-height: 1; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-trust .t-label { font-size: 13px; color: var(--faint); margin-top: 6px; }
+
+  /* hero visual — portrait placeholder + glass cards */
+  .hero-visual { position: relative; }
+  .portrait-ph {
+    position: relative; aspect-ratio: 4/5; border-radius: 28px; overflow: hidden;
+    background:
+      radial-gradient(120% 120% at 20% 10%, rgba(46,143,208,0.45), transparent 55%),
+      radial-gradient(120% 120% at 90% 90%, rgba(3,105,161,0.45), transparent 55%),
+      linear-gradient(160deg, #16202e, #0c1018);
+    border: 1px solid var(--stroke-2);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+    display: grid; place-items: center; text-align: center;
+  }
+  .portrait-ph .ph-inner { color: var(--muted); font-size: 13.5px; padding: 24px; }
+  .portrait-ph .ph-icon { width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--stroke-2); display: grid; place-items: center; }
+  .portrait-ph .ph-icon svg { width: 34px; height: 34px; stroke: var(--muted); }
+  .portrait-ph .ph-tag { display:inline-block; margin-top:14px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); border:1px dashed var(--stroke-2); padding:5px 10px; border-radius:100px; }
+
+  .float-card {
+    position: absolute; padding: 14px 18px; border-radius: 16px;
+    background: rgba(18,16,29,0.7); border: 1px solid var(--stroke-2);
+    backdrop-filter: blur(16px); box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .float-card .fc-ic { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; flex: none; }
+  .float-card .fc-ic.warm { background: var(--grad-warm); } .float-card .fc-ic.cool { background: var(--grad-cool); }
+  .float-card .fc-ic svg { width: 20px; height: 20px; stroke: #fff; }
+  .float-card .fc-t { font-size: 14px; font-weight: 700; line-height: 1.1; }
+  .float-card .fc-s { font-size: 12px; color: var(--muted); }
+  .float-card.fc-a { top: 8%; left: -7%; animation: bobA 6s ease-in-out infinite; }
+  .float-card.fc-b { bottom: 9%; right: -7%; animation: bobB 7s ease-in-out infinite; }
+  @keyframes bobA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  @keyframes bobB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+
+  /* ─────────────  LOGOS STRIP  ───────────── */
+  .logos { padding: 38px 0 8px; }
+  .logos-cap { text-align: center; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-bottom: 26px; }
+  .logos-track-wrap { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .logos-track { display: flex; gap: 56px; width: max-content; animation: marquee 32s linear infinite; }
+  .logos:hover .logos-track { animation-play-state: paused; }
+  .logo-ph { display: flex; align-items: center; gap: 10px; color: var(--faint); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; opacity: .65; transition: opacity .3s, color .3s; white-space: nowrap; }
+  .logo-ph:hover { opacity: 1; color: var(--muted); }
+  .logo-ph .lg-dot { width: 22px; height: 22px; border-radius: 7px; background: var(--surface-2); border: 1px solid var(--stroke-2); }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* ─────────────  ABOUT  ───────────── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,72px); align-items: center; }
+  .about-text p { font-size: clamp(17px,2.1vw,21px); color: var(--text); line-height: 1.55; }
+  .about-text p em { font-style: normal; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
+  .about-text .section-lead { color: var(--muted); font-size: 16.5px; }
+
+  .stats-card {
+    border-radius: var(--radius); padding: clamp(28px,4vw,42px);
+    background: var(--surface); border: 1px solid var(--stroke);
+    backdrop-filter: blur(12px); display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
+  .stats-card .stat:first-child { grid-column: 1 / -1; padding-bottom: 24px; border-bottom: 1px solid var(--stroke); }
+  .stat-num { font-family: var(--display); font-weight: 600; font-size: clamp(38px,5vw,56px); line-height: 1; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { font-size: 13.5px; color: var(--muted); margin-top: 10px; }
+
+  /* ─────────────  SERVICES  ───────────── */
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 46px; }
+  .svc-card {
+    position: relative; padding: 30px 26px 26px; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--stroke); overflow: hidden;
+    transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, background .3s;
+  }
+  .svc-card::before { content:""; position:absolute; inset:0; border-radius:inherit; padding:1px;
+    background: var(--grad-text); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity .3s; }
+  .svc-card:hover { transform: translateY(-6px); background: var(--surface-2); }
+  .svc-card:hover::before { opacity: .9; }
+  .svc-ic { width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 20px; background: var(--surface-2); border: 1px solid var(--stroke-2); }
+  .svc-ic svg { width: 26px; height: 26px; stroke: url(#icoGrad); fill: none; stroke-width: 1.7; }
+  .svc-name { font-family: var(--display); font-weight: 500; font-size: 19px; letter-spacing:-0.01em; margin-bottom: 10px; }
+  .svc-desc { font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+  .svc-card .svc-go { margin-top: 18px; font-size: 13.5px; font-weight: 600; color: var(--c1); display: inline-flex; align-items: center; gap: 7px; opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s; }
+  .svc-card:hover .svc-go { opacity: 1; transform: translateY(0); }
+
+  /* ─────────────  PROCESS  ───────────── */
+  .proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 46px; }
+  .proc-step {
+    position: relative; padding: 32px 28px; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--stroke);
+  }
+  .proc-num { font-family: var(--display); font-weight: 700; font-size: 15px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--grad-warm); color: #FFFFFF; margin-bottom: 22px; box-shadow: 0 8px 22px rgba(3,105,161,0.35); }
+  .proc-step:nth-child(2) .proc-num { background: var(--grad-cool); box-shadow: 0 8px 22px rgba(3,105,161,0.4); color:#fff; }
+  .proc-step:nth-child(3) .proc-num { background: linear-gradient(135deg,#0E5C8C,#0B4F7A); box-shadow: 0 8px 22px rgba(3,105,161,0.35); color:#FFFFFF; }
+  .proc-title { font-family: var(--display); font-weight: 500; font-size: 21px; margin-bottom: 10px; }
+  .proc-desc { font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+  .proc-line { position: absolute; top: 55px; right: -9px; width: 18px; height: 2px; background: var(--stroke-2); }
+  .proc-step:last-child .proc-line { display: none; }
+
+  /* ─────────────  PRICING  ───────────── */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 46px; align-items: stretch; }
+  .price-card {
+    position: relative; display: flex; flex-direction: column; padding: 32px 28px;
+    border-radius: var(--radius); background: var(--surface); border: 1px solid var(--stroke);
+    transition: transform .3s, border-color .3s;
+  }
+  .price-card:hover { transform: translateY(-6px); }
+  .price-card.featured {
+    background: linear-gradient(180deg, rgba(46,143,208,0.12), rgba(3,105,161,0.07)), var(--surface-2);
+    border-color: transparent; box-shadow: 0 24px 70px rgba(3,105,161,0.28);
+  }
+  .price-card.featured::before { content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px;
+    background: var(--grad-text); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+  .price-tag { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; background: var(--grad-warm); color: #FFFFFF; box-shadow: 0 8px 20px rgba(3,105,161,0.45); white-space: nowrap; }
+  .price-name { font-family: var(--display); font-weight: 500; font-size: 19px; margin-bottom: 8px; }
+  .price-for { font-size: 13.5px; color: var(--faint); margin-bottom: 22px; min-height: 38px; }
+  .price-amount { font-family: var(--display); font-weight: 600; font-size: clamp(30px,4vw,40px); line-height: 1; }
+  .price-amount .per { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--faint); }
+  .price-feats { margin: 24px 0 28px; display: flex; flex-direction: column; gap: 12px; }
+  .price-feats li { display: flex; gap: 11px; font-size: 14.5px; color: var(--muted); line-height: 1.4; }
+  .price-feats li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; }
+  .price-card .btn { width: 100%; justify-content: center; margin-top: auto; }
+  .pricing-note { text-align: center; margin-top: 26px; font-size: 13.5px; color: var(--faint); }
+
+  /* ─────────────  TESTIMONIALS  ───────────── */
+  .tst-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 46px; }
+  .tst {
+    padding: 30px 28px; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--stroke);
+    display: flex; flex-direction: column;
+  }
+  .tst-stars { color: #FFC15E; letter-spacing: 2px; font-size: 14px; margin-bottom: 16px; }
+  .tst-quote { font-size: 15px; line-height: 1.6; color: var(--text); flex: 1; }
+  .tst-foot { display: flex; align-items: center; gap: 13px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--stroke); }
+  .tst-ava { width: 44px; height: 44px; border-radius: 50%; flex: none; display: grid; place-items: center; font-family: var(--display); font-weight: 600; font-size: 16px; color: #FFFFFF; }
+  .tst:nth-child(1) .tst-ava { background: var(--grad-warm); }
+  .tst:nth-child(2) .tst-ava { background: var(--grad-cool); color:#fff; }
+  .tst:nth-child(3) .tst-ava { background: linear-gradient(135deg,#0E5C8C,#0B4F7A); color:#FFFFFF; }
+  .tst-name { font-weight: 700; font-size: 14.5px; }
+  .tst-role { font-size: 12.5px; color: var(--faint); margin-top: 2px; }
+
+  /* ─────────────  FAQ  ───────────── */
+  .faq-list { margin-top: 46px; border-top: 1px solid var(--stroke); max-width: 880px; }
+  .faq-item { border-bottom: 1px solid var(--stroke); }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    text-align: left; background: none; border: none; cursor: pointer; color: var(--text);
+    font-family: var(--display); font-weight: 500; font-size: clamp(17px,2.2vw,21px);
+    letter-spacing: -0.01em; padding: 24px 4px; transition: color .2s;
+  }
+  .faq-q:hover { color: var(--accent); }
+  .faq-ic {
+    flex: none; width: 30px; height: 30px; border-radius: 50%; position: relative;
+    border: 1px solid var(--stroke-2); transition: background .25s, border-color .25s;
+  }
+  .faq-q[aria-expanded="true"] .faq-ic { background: var(--grad-warm); border-color: transparent; }
+  .faq-ic::before, .faq-ic::after {
+    content: ""; position: absolute; top: 50%; left: 50%; background: var(--muted);
+    transform: translate(-50%,-50%); transition: transform .25s, background .25s;
+  }
+  .faq-ic::before { width: 12px; height: 2px; }
+  .faq-ic::after  { width: 2px; height: 12px; }
+  .faq-q[aria-expanded="true"] .faq-ic::before,
+  .faq-q[aria-expanded="true"] .faq-ic::after { background: #fff; }
+  .faq-q[aria-expanded="true"] .faq-ic::after { transform: translate(-50%,-50%) scaleY(0); }
+  .faq-a { overflow: hidden; height: 0; transition: height .3s ease; }
+  .faq-a-inner { padding: 0 4px 26px; color: var(--muted); font-size: 15.5px; line-height: 1.65; max-width: 66ch; }
+  .faq-a-inner b { color: var(--text); font-weight: 600; }
+
+  /* ─────────────  CONTACT / CTA  ───────────── */
+  .cta-card {
+    position: relative; border-radius: 32px; overflow: hidden;
+    padding: clamp(36px,5vw,64px);
+    background: linear-gradient(150deg, rgba(46,143,208,0.14), rgba(3,105,161,0.12) 60%, rgba(11,79,122,0.12)), var(--surface-2);
+    border: 1px solid var(--stroke-2);
+    box-shadow: 0 30px 90px rgba(0,0,0,0.45);
+  }
+  .cta-card .glow { position: absolute; width: 50%; height: 140%; top: -20%; right: -10%; background: radial-gradient(circle, rgba(3,105,161,0.4), transparent 60%); filter: blur(40px); pointer-events: none; }
+  .contact-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,64px); align-items: start; }
+  .contact-headline { font-family: var(--display); font-weight: 600; font-size: clamp(28px,3.6vw,44px); line-height: 1.1; letter-spacing: -0.02em; }
+  .contact-headline .grad { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .contact-sub { font-size: 16px; color: var(--muted); margin-top: 18px; max-width: 42ch; }
+  .contact-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+  .contact-meta { margin-top: 30px; font-size: 13.5px; color: var(--faint); display: flex; flex-direction: column; gap: 8px; }
+  .contact-meta b { color: var(--muted); font-weight: 600; }
+
+  .form { display: flex; flex-direction: column; gap: 18px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label { font-size: 12.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .field input, .field textarea {
+    background: rgba(11,10,18,0.5); border: 1px solid var(--stroke); color: var(--text);
+    font-family: var(--sans); font-size: 16px; padding: 14px 16px; border-radius: var(--radius-sm);
+    width: 100%; max-width: 100%;
+    outline: none; -webkit-appearance: none; transition: border-color .2s, box-shadow .2s, background .2s;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: var(--faint); }
+  .field input:focus, .field textarea:focus { border-color: var(--c2); box-shadow: 0 0 0 3px rgba(46,143,208,0.25); background: rgba(11,10,18,0.7); }
+  .field textarea { resize: vertical; min-height: 108px; }
+  .field.invalid input, .field.invalid textarea { border-color: #FF5E62; box-shadow: 0 0 0 3px rgba(3,105,161,0.15); }
+  .field .err { font-size: 12.5px; color: #FF8A7A; display: none; }
+  .field.invalid .err { display: block; }
+  .btn-submit { margin-top: 4px; }
+  .form-success { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.4; padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--stroke); }
+  .form-success .grad { background: var(--grad-text); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+
+  /* ─────────────  FOOTER  ───────────── */
+  .footer { padding: 48px 0 calc(40px + env(safe-area-inset-bottom)); border-top: 1px solid var(--stroke); margin-top: clamp(60px,8vw,100px); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+  .footer .wordmark { font-size: 16px; }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13.5px; color: var(--faint); transition: color .2s; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy { font-size: 12.5px; color: var(--faint); margin-top: 22px; }
+
+  /* ─────────────  SCROLL REVEAL  ───────────── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
+
+  /* ─────────────  RESPONSIVE  ───────────── */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 440px; margin: 8px auto 0; }
+    .about-grid { grid-template-columns: 1fr; }
+    .svc-grid, .proc-grid, .pricing-grid, .tst-grid { grid-template-columns: 1fr 1fr; }
+    .proc-line { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .nav-links { position: absolute; top: calc(100% + 10px); left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 4px; padding: 12px;
+      background: rgba(15,13,26,0.92); border: 1px solid var(--stroke); border-radius: 20px;
+      backdrop-filter: blur(20px); max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
+      transition: max-height .3s, opacity .3s; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .nav-links a:not(.nav-cta) { padding: 13px 16px; }
+    .nav-cta { text-align: center; margin-top: 4px; }
+    .nav-toggle:checked ~ .nav-inner .nav-links { max-height: 360px; opacity: 1; pointer-events: auto; }
+    .nav-inner { position: relative; }
+    .burger { display: flex; }
+    .svc-grid, .proc-grid, .pricing-grid, .tst-grid, .stats-card { grid-template-columns: 1fr; }
+    .price-card.featured { order: -1; }
+    .float-card { display: none; }
+
+    /* hero: не даём заголовку и тексту вылезать за экран */
+    .hero { padding-top: clamp(36px, 9vw, 70px); }
+    .hero h1 { font-size: clamp(33px, 11vw, 52px); line-height: 1.02; overflow-wrap: break-word; }
+    .hero h1 br { display: none; }
+    .hero-lead { font-size: 16px; }
+    .hero-badge { font-size: 12px; gap: 8px; }
+    .hero-badge .pill { font-size: 11px; padding: 4px 9px; }
+
+    /* статистика: 3 равные колонки, подписи переносятся */
+    .hero-trust { gap: 14px; }
+    .hero-trust .t { flex: 1 1 0; min-width: 0; }
+    .hero-trust .t-num { font-size: clamp(22px, 7vw, 30px); }
+    .hero-trust .t-label { font-size: 12px; }
+
+    .h2, .contact-headline { overflow-wrap: break-word; }
+
+    /* облегчаем фон для слабых мобильных GPU */
+    .blob { filter: blur(48px); opacity: .42; animation: none; }
+    .bg-grid { background-size: 44px 44px; }
+
+    /* на тач-устройствах нет hover — показываем CTA услуг сразу и даём тап-зону */
+    .svc-card .svc-go { opacity: 1; transform: none; padding: 13px 0; }
+    .svc-card { padding-bottom: 18px; }
+    /* увеличиваем тап-области второстепенных ссылок до комфортных */
+    .wordmark { padding: 9px 0; }
+    .footer-links { gap: 2px 22px; }
+    .footer-links a { padding: 13px 0; display: inline-block; }
+  }
+  /* запасной вариант для любых устройств без hover (планшеты-тач и т.п.) */
+  @media (hover: none) {
+    .svc-card .svc-go { opacity: 1; transform: none; }
+  }
+  @media (max-width: 380px) {
+    .hero h1 { font-size: clamp(28px, 9.5vw, 34px); }
+    .hero-trust { gap: 10px; }
+    .hero-trust .t-label { font-size: 11px; }
+    .h2 { font-size: clamp(26px, 8.5vw, 34px); }
+    .price-amount { font-size: clamp(28px, 9vw, 36px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- background fx -->
+<div class="bg-fx"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+
+<!-- shared SVG gradient for icon strokes -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="icoGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#7BC0EE"/><stop offset="0.6" stop-color="#3E9BD8"/><stop offset="1" stop-color="#2E8FD0"/>
+  </linearGradient>
+</defs></svg>
+
+<!-- ──────────  NAV  ────────── -->
+<nav class="nav" id="nav" aria-label="Основная навигация">
+  <input type="checkbox" id="navToggle" class="nav-toggle">
+  <div class="nav-inner wrap" style="max-width:var(--maxw)">
+    <a href="#top" class="wordmark"><span class="mark">T</span>TalentCo</a>
+    <label for="navToggle" class="burger" aria-label="Меню"><span></span><span></span><span></span></label>
+    <div class="nav-links">
+      <a href="#about">О консультанте</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Как работаем</a>
+      <a href="#pricing">Цены</a>
+      <a href="#testimonials">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact" class="nav-cta">Связаться</a>
+    </div>
+  </div>
+</nav>
+
+<a id="top"></a>
+
+<!-- ──────────  HERO  ────────── -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badge reveal">
+          <span class="pill">Executive Search</span>
+          <span class="stars">★★★★★</span>
+          <span style="color:var(--muted)">200+ закрытых задач</span>
+        </div>
+        <h1 class="reveal d1">Найди <span class="grad">лучших&nbsp;людей</span> — <br>и вырасти быстрее.</h1>
+        <p class="hero-lead reveal d2"><b>Dmitrii Balash</b> помогает компаниям нанимать точнее, а специалистам — строить карьеру без случайностей. Восемь лет в подборе топ-менеджеров для IT и производства.</p>
+        <div class="hero-cta reveal d2">
+          <a href="#contact" class="btn btn-primary">Бесплатная диагностика <span class="arr">→</span></a>
+          <a href="#services" class="btn btn-ghost">Смотреть услуги</a>
+        </div>
+        <div class="hero-trust reveal d3">
+          <div class="t"><div class="t-num">200+</div><div class="t-label">карьерных сессий</div></div>
+          <div class="t"><div class="t-num">8 лет</div><div class="t-label">в профессии</div></div>
+          <div class="t"><div class="t-num">40+</div><div class="t-label">компаний-партнёров</div></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal d2">
+        <!-- ↓ ЗАМЕНИ на свой портрет: <img src="me.jpg" alt="Dmitrii Balash"> -->
+        <div class="portrait-ph" role="img" aria-label="Место под фото консультанта">
+          <div class="ph-inner">
+            <div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 20a8 8 0 0 1 16 0"/></svg></div>
+            <div>Ваше фото<br>(портрет 4:5)</div>
+            <span class="ph-tag">замени .portrait-ph</span>
+          </div>
+        </div>
+        <div class="float-card fc-a">
+          <div class="fc-ic warm"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+          <div><div class="fc-t">Оффер за 3 недели</div><div class="fc-s">средний срок закрытия</div></div>
+        </div>
+        <div class="float-card fc-b">
+          <div class="fc-ic cool"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+          <div><div class="fc-t">+40% к доходу</div><div class="fc-s">у клиентов после сессий</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ──────────  LOGOS  ────────── -->
+<section class="logos" aria-label="Компании-партнёры">
+  <div class="wrap">
+    <div class="logos-cap reveal">Доверяют команды из IT и производства</div>
+  </div>
+  <div class="logos-track-wrap">
+    <!-- ↓ ЗАМЕНИ .logo-ph на реальные логотипы клиентов -->
+    <div class="logos-track">
+      <div class="logo-ph"><span class="lg-dot"></span>Nordcomp</div>
+      <div class="logo-ph"><span class="lg-dot"></span>Финтех Лаб</div>
+      <div class="logo-ph"><span class="lg-dot"></span>ProdMash</div>
+      <div class="logo-ph"><span class="lg-dot"></span>DataForge</div>
+      <div class="logo-ph"><span class="lg-dot"></span>Аркос</div>
+      <div class="logo-ph"><span class="lg-dot"></span>Velar IT</div>
+      <!-- duplicate for seamless marquee -->
+      <div class="logo-ph"><span class="lg-dot"></span>Nordcomp</div>
+      <div class="logo-ph"><span class="lg-dot"></span>Финтех Лаб</div>
+      <div class="logo-ph"><span class="lg-dot"></span>ProdMash</div>
+      <div class="logo-ph"><span class="lg-dot"></span>DataForge</div>
+      <div class="logo-ph"><span class="lg-dot"></span>Аркос</div>
+      <div class="logo-ph"><span class="lg-dot"></span>Velar IT</div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ──────────  ABOUT  ────────── -->
+<section class="section" id="about" aria-labelledby="about-label">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <span class="eyebrow reveal" id="about-label"><span class="dot"></span>О консультанте</span>
+      <p class="reveal d1">Я выстраиваю <em>карьерный рост</em> для специалистов и закрываю позиции, которые другим кажутся невозможными — от <em>технических директоров</em> до руководителей продуктов.</p>
+      <p class="section-lead reveal d2">Восемь лет в подборе топ-менеджеров. Глубоко работаю с IT-компаниями и производственным сектором — знаю, как устроен найм с обеих сторон стола. Не продаю иллюзии: называю вещи своими именами и довожу до конкретного результата.</p>
+    </div>
+    <div class="stats-card reveal d1">
+      <div class="stat"><div class="stat-num">200+</div><div class="stat-label">проведённых карьерных сессий</div></div>
+      <div class="stat"><div class="stat-num">8 лет</div><div class="stat-label">в профессии</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">компаний-партнёров</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────  SERVICES  ────────── -->
+<section class="section" id="services" aria-labelledby="services-label">
+  <div class="wrap">
+    <span class="eyebrow reveal" id="services-label"><span class="dot"></span>Услуги</span>
+    <h2 class="h2 reveal d1">Помогаю с обеих сторон <span class="grad">стола найма</span></h2>
+    <div class="svc-grid">
+
+      <article class="svc-card reveal d1">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div class="svc-name">Карьерное консультирование</div>
+        <div class="svc-desc">Стратегия роста, смена индустрии, личный план развития под конкретную цель.</div>
+        <a href="#contact" class="svc-go">Обсудить →</a>
+      </article>
+
+      <article class="svc-card reveal d2">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div class="svc-name">Подбор топ-менеджеров</div>
+        <div class="svc-desc">Executive search для производственных и IT-компаний — точечно и быстро.</div>
+        <a href="#contact" class="svc-go">Обсудить →</a>
+      </article>
+
+      <article class="svc-card reveal d3">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+        <div class="svc-name">Аудит резюме и LinkedIn</div>
+        <div class="svc-desc">Точечная работа с профилем, чтобы он работал на вашу цель, а не против неё.</div>
+        <a href="#contact" class="svc-go">Обсудить →</a>
+      </article>
+
+      <article class="svc-card reveal d1">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="svc-name">Подготовка к интервью</div>
+        <div class="svc-desc">Разбор кейсов, мок-интервью и работа с самопрезентацией — без воды.</div>
+        <a href="#contact" class="svc-go">Обсудить →</a>
+      </article>
+
+      <article class="svc-card reveal d2">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="svc-name">HR-консалтинг для бизнеса</div>
+        <div class="svc-desc">Построение воронки найма, оценка команды и онбординг новых людей.</div>
+        <a href="#contact" class="svc-go">Обсудить →</a>
+      </article>
+
+      <article class="svc-card reveal d3">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
+        <div class="svc-name">Сопровождение оффера</div>
+        <div class="svc-desc">Переговоры по зарплате и условиям — чтобы вы вышли на максимуме рынка.</div>
+        <a href="#contact" class="svc-go">Обсудить →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ──────────  PROCESS  ────────── -->
+<section class="section" id="process" aria-labelledby="process-label">
+  <div class="wrap">
+    <span class="eyebrow reveal" id="process-label"><span class="dot"></span>Как мы работаем</span>
+    <h2 class="h2 reveal d1">Три шага до <span class="grad">результата</span></h2>
+    <div class="proc-grid">
+      <div class="proc-step reveal d1">
+        <div class="proc-num">01</div><span class="proc-line"></span>
+        <div class="proc-title">Знакомство</div>
+        <div class="proc-desc">15-минутный звонок — понимаем задачу, цель и контекст. Без воды и продаж.</div>
+      </div>
+      <div class="proc-step reveal d2">
+        <div class="proc-num">02</div><span class="proc-line"></span>
+        <div class="proc-title">Работа</div>
+        <div class="proc-desc">Глубокая карьерная сессия или активный поиск кандидатов под вашу вакансию.</div>
+      </div>
+      <div class="proc-step reveal d3">
+        <div class="proc-num">03</div>
+        <div class="proc-title">Результат</div>
+        <div class="proc-desc">Оффер, карьерный рост или закрытая вакансия — фиксируем конкретный итог.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────  PRICING  ────────── -->
+<section class="section" id="pricing" aria-labelledby="pricing-label">
+  <div class="wrap">
+    <span class="eyebrow reveal" id="pricing-label"><span class="dot"></span>Пакеты и цены</span>
+    <h2 class="h2 reveal d1">Прозрачно. <span class="grad">Без сюрпризов</span></h2>
+    <p class="section-lead reveal d1">Выберите формат под свою задачу. Все цены — ориентир; финальную смету подтверждаю после короткого звонка.</p>
+
+    <div class="pricing-grid">
+
+      <article class="price-card reveal d1">
+        <div class="price-name">Разовая сессия</div>
+        <div class="price-for">Для тех, кому нужна ясность здесь и сейчас</div>
+        <div class="price-amount">5 000 <span class="per">₽ / 60 мин</span></div>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Диагностика карьерной ситуации</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Конкретные шаги на 1–3 месяца</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Запись разговора и резюме сессии</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Записаться</a>
+      </article>
+
+      <article class="price-card featured reveal d2">
+        <span class="price-tag">Популярный выбор</span>
+        <div class="price-name">Карьерный пакет</div>
+        <div class="price-for">Полный разбор и сопровождение до оффера</div>
+        <div class="price-amount">29 000 <span class="per">₽ / 1 месяц</span></div>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> 4 сессии + переписка между ними</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Переупаковка резюме и LinkedIn</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Мок-интервью и подготовка к встречам</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Сопровождение переговоров по офферу</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Начать <span class="arr">→</span></a>
+      </article>
+
+      <article class="price-card reveal d3">
+        <div class="price-name">Executive Search</div>
+        <div class="price-for">Для компаний: закрываю сложные позиции</div>
+        <div class="price-amount">По запросу <span class="per">/ проект</span></div>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Активный поиск топ-кандидатов</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Оценка и проверка финалистов</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#icoGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Гарантия замены кандидата</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Обсудить проект</a>
+      </article>
+
+    </div>
+    <p class="pricing-note reveal">Цены указаны как ориентир — замените на свои в блоке <code>.price-amount</code>.</p>
+  </div>
+</section>
+
+<!-- ──────────  TESTIMONIALS  ────────── -->
+<section class="section" id="testimonials" aria-labelledby="tst-label">
+  <div class="wrap">
+    <span class="eyebrow reveal" id="tst-label"><span class="dot"></span>Отзывы</span>
+    <h2 class="h2 reveal d1">Что говорят <span class="grad">клиенты</span></h2>
+    <div class="tst-grid">
+
+      <article class="tst reveal d1">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-quote">«Искали CTO почти полгода своими силами — без результата. Dmitrii вышел на сильного кандидата за три недели и провёл нас через все этапы. Человек работает у нас второй год.»</p>
+        <div class="tst-foot"><div class="tst-ava">АЛ</div><div><div class="tst-name">Андрей Левченко</div><div class="tst-role">IT-директор, финтех-платформа</div></div></div>
+      </article>
+
+      <article class="tst reveal d2">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-quote">«Хотела уйти из банковской сферы, но не понимала куда. Одна сессия дала больше ясности, чем год сомнений. Через два месяца вышла продактом в продуктовую компанию.»</p>
+        <div class="tst-foot"><div class="tst-ava">ОВ</div><div><div class="tst-name">Ольга Веденеева</div><div class="tst-role">Менеджер продукта</div></div></div>
+      </article>
+
+      <article class="tst reveal d3">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-quote">«Закрыли три вакансии за месяц — двух инженеров и операционного директора. Dmitrii приводит людей, которые реально подходят, а не просто закрывают строчку.»</p>
+        <div class="tst-foot"><div class="tst-ava">СМ</div><div><div class="tst-name">Сергей Маслов</div><div class="tst-role">CEO, производственная компания</div></div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ──────────  FAQ  ────────── -->
+<section class="section" id="faq" aria-labelledby="faq-label">
+  <div class="wrap">
+    <span class="eyebrow reveal" id="faq-label"><span class="dot"></span>Вопросы</span>
+    <h2 class="h2 reveal d1">Частые <span class="grad">вопросы</span></h2>
+    <div class="faq-list reveal d1">
+
+      <div class="faq-item">
+        <button class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+          Сколько стоит работа и от чего зависит цена?
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+          <div class="faq-a-inner">Разовая сессия — <b>5 000 ₽</b>, карьерный пакет с сопровождением до оффера — <b>29 000 ₽</b>, executive search для компаний — по проекту. Финальную смету подтверждаю после короткого звонка: цена зависит от задачи, сроков и уровня позиции.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+          Как проходит работа — онлайн или очно?
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+          <div class="faq-a-inner">Полностью онлайн: видеозвонки и переписка между сессиями. Работаю по будням в часовом поясе МСК, но подстраиваюсь под клиентов из других регионов и стран СНГ.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+          Сколько времени занимает результат?
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+          <div class="faq-a-inner">Разовая сессия даёт ясность уже за один разговор. Карьерный пакет — это месяц плотной работы до оффера. По подбору средний срок выхода на сильного кандидата — <b>около 3 недель</b>.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+          Есть ли гарантия на подбор кандидата?
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+          <div class="faq-a-inner">Да. По executive search действует <b>гарантия бесплатной замены</b>, если кандидат не проходит испытательный срок. Условия и сроки фиксируем в договоре до старта.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+          Что с конфиденциальностью?
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+          <div class="faq-a-inner">Всё, что обсуждаем, остаётся между нами. Не передаю резюме и детали переговоров третьим лицам, при необходимости подписываю NDA — особенно по работе с действующими сотрудниками компаний.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+          Что входит в бесплатную диагностику?
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+          <div class="faq-a-inner">15 минут по видео или в Telegram: вы рассказываете задачу, я честно говорю, чем смогу помочь и в каком формате. Без презентаций и продаж — если не мой случай, так и скажу и подскажу, к кому обратиться.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ──────────  CONTACT  ────────── -->
+<section class="section" id="contact" aria-labelledby="contact-label">
+  <div class="wrap">
+    <div class="cta-card reveal d1">
+      <div class="glow"></div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <span class="eyebrow" id="contact-label" style="background:rgba(255,255,255,0.06)"><span class="dot"></span>Связаться</span>
+          <h2 class="contact-headline">Готов обсудить <span class="grad">вашу задачу</span>.</h2>
+          <p class="contact-sub">Расскажите, что нужно — карьерная сессия или поиск кандидата. Отвечу в течение 24 часов. Первая 15-минутная диагностика — бесплатно.</p>
+          <div class="contact-btns">
+            <!-- ↓ замените ссылки на свои -->
+            <a href="https://t.me/alferdmitry" class="btn btn-primary tg-btn" target="_blank" rel="noopener">Написать в Telegram <span class="arr">→</span></a>
+            <a href="mailto:alinsig21@gmail.com" class="btn btn-ghost mail-btn">Email</a>
+          </div>
+          <div class="contact-meta">
+            <span><b>Telegram:</b> @alferdmitry</span>
+            <span><b>Email:</b> alinsig21@gmail.com</span>
+            <span><b>Часовой пояс:</b> отвечаю по будням, МСК</span>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="form" id="form">
+            <div class="field" id="f-name">
+              <label for="i-name">Имя</label>
+              <input type="text" id="i-name" autocomplete="name" placeholder="Как вас зовут?">
+              <span class="err">Укажите имя</span>
+            </div>
+            <div class="field" id="f-email">
+              <label for="i-email">Email</label>
+              <input type="email" id="i-email" autocomplete="email" placeholder="you@company.com">
+              <span class="err">Введите корректный email</span>
+            </div>
+            <div class="field" id="f-msg">
+              <label for="i-msg">Запрос</label>
+              <textarea id="i-msg" rows="4" placeholder="Коротко о задаче"></textarea>
+              <span class="err">Опишите задачу</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-submit" id="submit">Отправить заявку <span class="arr">→</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ──────────  FOOTER  ────────── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="#top" class="wordmark"><span class="mark">T</span>TalentCo</a>
+      <div class="footer-links">
+        <a href="#about">О консультанте</a>
+        <a href="#services">Услуги</a>
+        <a href="#pricing">Цены</a>
+        <a href="#contact">Связаться</a>
+        <a href="https://t.me/alferdmitry" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 TalentCo · Dmitrii Balash · Карьерное консультирование и executive search</div>
+  </div>
+</footer>
+
+<script>
+  /* nav shadow on scroll */
+  (function () {
+    var nav = document.getElementById('nav');
+    function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 30); }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  })();
+
+  /* close mobile menu on link click */
+  (function () {
+    var t = document.getElementById('navToggle');
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function(){ t.checked = false; });
+    });
+  })();
+
+  /* scroll-reveal */
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+
+  /* FAQ accordion (disclosure, доступно с клавиатуры) */
+  (function () {
+    var qs = document.querySelectorAll('.faq-q');
+    function close(btn){ var a=document.getElementById(btn.getAttribute('aria-controls')); btn.setAttribute('aria-expanded','false'); a.style.height='0px'; }
+    function open(btn){ var a=document.getElementById(btn.getAttribute('aria-controls')); btn.setAttribute('aria-expanded','true'); a.style.height=a.firstElementChild.offsetHeight+'px'; }
+    qs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        qs.forEach(close);              // аккордеон: одновременно открыт один
+        if (!isOpen) open(btn);
+      });
+    });
+    // пересчёт высоты раскрытого пункта при ресайзе
+    window.addEventListener('resize', function () {
+      var cur = document.querySelector('.faq-q[aria-expanded="true"]');
+      if (cur) { var a=document.getElementById(cur.getAttribute('aria-controls')); a.style.height=a.firstElementChild.offsetHeight+'px'; }
+    }, { passive: true });
+  })();
+
+  /* form validation + success */
+  (function () {
+    var form = document.getElementById('form');
+    var btn  = document.getElementById('submit');
+    var name = document.getElementById('i-name');
+    var email= document.getElementById('i-email');
+    var msg  = document.getElementById('i-msg');
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    [name,email,msg].forEach(function(el){ el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); }); });
+    btn.addEventListener('click', function () {
+      var ok = true;
+      if (!name.value.trim())          { document.getElementById('f-name').classList.add('invalid'); ok=false; }
+      if (!re.test(email.value.trim())){ document.getElementById('f-email').classList.add('invalid'); ok=false; }
+      if (!msg.value.trim())           { document.getElementById('f-msg').classList.add('invalid'); ok=false; }
+      if (!ok) return;
+      var done = document.createElement('div');
+      done.className = 'form-success';
+      done.setAttribute('role','status');
+      done.innerHTML = 'Спасибо! <span class="grad">Свяжусь в течение 24 часов.</span>';
+      form.replaceWith(done);
+    });
+  })();
+</script>
+</body>
+</html>
