@@ -21,7 +21,7 @@
 <meta name="description" content="TalentCo — Dmitrii Balash. Карьерное консультирование и executive search для компаний России и СНГ. Найди лучших людей и вырасти быстрее.">
 <meta name="theme-color" content="#0B0A12">
 <!-- Базовая защита (работает на любом хостинге, в т.ч. GitHub Pages, где нельзя задать HTTP-заголовки) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://api.web3forms.com https://api.telegram.org; base-uri 'self'; form-action 'self'">
 <title>TalentCo — Dmitrii Balash · Карьерный консультант</title>
 
 <!-- ⚠️ ЗАМЕНИ домен на свой реальный во всех абсолютных URL ниже (canonical, og:url, og:image) -->
@@ -1150,18 +1150,80 @@
     var email= document.getElementById('i-email');
     var msg  = document.getElementById('i-msg');
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    [name,email,msg].forEach(function(el){ el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); }); });
+
+    /* ───── КУДА ПРИХОДЯТ ЗАЯВКИ — впиши свои ключи ─────
+       1) WEB3FORMS_KEY — access key с https://web3forms.com (заявки на email)
+       2) TG_BOT_TOKEN  — токен бота от @BotFather (заявки в Telegram)
+       3) TG_CHAT_ID    — твой numeric chat id (узнать у @userinfobot)
+       Пока стоят значения по умолчанию — форма работает в демо-режиме
+       (показывает «Спасибо», но никуда не шлёт). Подставь ключи — заработает по-настоящему. */
+    var LEADS = {
+      WEB3FORMS_KEY: 'YOUR_WEB3FORMS_ACCESS_KEY',
+      TG_BOT_TOKEN:  '8642665055:AAGbRb0vUkzEFSAH6QD92hApcPtp36H76eQ',
+      TG_CHAT_ID:    '89192985'
+    };
+
+    [name,email,msg].forEach(function(el){ el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); el.closest('.form') && hideErr(); }); });
+
+    function hideErr(){ var e=document.getElementById('form-err'); if(e) e.remove(); }
+    function showErr(){
+      hideErr();
+      var e=document.createElement('div'); e.id='form-err'; e.setAttribute('role','alert');
+      e.style.cssText='color:#FF8A7A;font-size:13.5px;margin-top:4px';
+      e.textContent='Не удалось отправить. Напишите в Telegram или на почту — кнопки слева.';
+      btn.insertAdjacentElement('afterend', e);
+    }
+    function success(){
+      var done=document.createElement('div');
+      done.className='form-success'; done.setAttribute('role','status');
+      done.innerHTML='Спасибо! <span class="grad">Свяжусь в течение 24 часов.</span>';
+      form.replaceWith(done);
+    }
+
     btn.addEventListener('click', function () {
       var ok = true;
       if (!name.value.trim())          { document.getElementById('f-name').classList.add('invalid'); ok=false; }
       if (!re.test(email.value.trim())){ document.getElementById('f-email').classList.add('invalid'); ok=false; }
       if (!msg.value.trim())           { document.getElementById('f-msg').classList.add('invalid'); ok=false; }
       if (!ok) return;
-      var done = document.createElement('div');
-      done.className = 'form-success';
-      done.setAttribute('role','status');
-      done.innerHTML = 'Спасибо! <span class="grad">Свяжусь в течение 24 часов.</span>';
-      form.replaceWith(done);
+
+      var data = { name:name.value.trim(), email:email.value.trim(), message:msg.value.trim() };
+
+      // Демо-режим, пока не вписаны ключи — не ломаем живой сайт
+      if (LEADS.WEB3FORMS_KEY.indexOf('YOUR_') === 0 && LEADS.TG_BOT_TOKEN.indexOf('YOUR_') === 0) {
+        success(); return;
+      }
+
+      hideErr(); btn.disabled = true; btn.textContent = 'Отправляю…';
+      var jobs = [];
+
+      // 1) Email через Web3Forms
+      if (LEADS.WEB3FORMS_KEY.indexOf('YOUR_') !== 0) {
+        jobs.push(fetch('https://api.web3forms.com/submit', {
+          method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'},
+          body: JSON.stringify({
+            access_key: LEADS.WEB3FORMS_KEY,
+            subject: 'Новая заявка с TalentCo',
+            from_name: 'Сайт TalentCo',
+            name: data.name, email: data.email, message: data.message
+          })
+        }).then(function(r){ return r.ok; }).catch(function(){ return false; }));
+      }
+
+      // 2) Telegram через бота
+      if (LEADS.TG_BOT_TOKEN.indexOf('YOUR_') !== 0 && LEADS.TG_CHAT_ID.indexOf('YOUR_') !== 0) {
+        var text = '🟦 Новая заявка с сайта TalentCo\n\n👤 Имя: '+data.name+'\n✉️ Контакт: '+data.email+'\n📝 Запрос: '+data.message;
+        jobs.push(fetch('https://api.telegram.org/bot'+LEADS.TG_BOT_TOKEN+'/sendMessage', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ chat_id: LEADS.TG_CHAT_ID, text: text, disable_web_page_preview: true })
+        }).then(function(r){ return r.ok; }).catch(function(){ return false; }));
+      }
+
+      Promise.allSettled(jobs).then(function(res){
+        var anyOk = res.some(function(x){ return x.status==='fulfilled' && x.value === true; });
+        if (anyOk) { success(); }
+        else { btn.disabled=false; btn.textContent='Отправить заявку →'; showErr(); }
+      });
     });
   })();
 </script>
