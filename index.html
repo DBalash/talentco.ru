@@ -590,6 +590,16 @@
   .field .err { font-size: 12.5px; color: #FF8A7A; display: none; }
   .field.invalid .err { display: block; }
   .btn-submit { margin-top: 4px; }
+  /* honeypot — прячем от людей, но не через display:none (боты это распознают) */
+  .hp { position: absolute !important; left: -9999px !important; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  /* согласие на обработку ПДн (152-ФЗ) */
+  .field-consent { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+  .consent { display: flex; align-items: flex-start; gap: 11px; cursor: pointer; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+  .consent input { margin-top: 1px; width: 18px; height: 18px; flex: none; accent-color: var(--c1); cursor: pointer; }
+  .consent a { color: var(--c1); text-decoration: underline; }
+  .field-consent .err { display: none; }
+  .field-consent.invalid .err { display: block; }
+
   .form-success { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.4; padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--stroke); }
   .form-success .grad { background: var(--grad-text); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 
@@ -1055,19 +1065,34 @@
           <div class="form" id="form">
             <div class="field" id="f-name">
               <label for="i-name">Имя</label>
-              <input type="text" id="i-name" autocomplete="name" placeholder="Как вас зовут?">
+              <input type="text" id="i-name" name="name" autocomplete="name" maxlength="80" required aria-required="true" placeholder="Как вас зовут?">
               <span class="err">Укажите имя</span>
             </div>
             <div class="field" id="f-email">
-              <label for="i-email">Email</label>
-              <input type="email" id="i-email" autocomplete="email" placeholder="you@company.com">
+              <label for="i-email">Email или телефон</label>
+              <input type="email" id="i-email" name="email" autocomplete="email" inputmode="email" maxlength="120" required aria-required="true" placeholder="you@company.com">
               <span class="err">Введите корректный email</span>
             </div>
             <div class="field" id="f-msg">
               <label for="i-msg">Запрос</label>
-              <textarea id="i-msg" rows="4" placeholder="Коротко о задаче"></textarea>
+              <textarea id="i-msg" name="message" rows="4" maxlength="2000" required aria-required="true" placeholder="Коротко о задаче"></textarea>
               <span class="err">Опишите задачу</span>
             </div>
+
+            <!-- honeypot: скрыто от людей, ловит ботов -->
+            <div class="hp" aria-hidden="true">
+              <label for="i-website">Не заполняйте это поле</label>
+              <input type="text" id="i-website" name="website_url" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="field-consent" id="f-consent">
+              <label class="consent">
+                <input type="checkbox" id="i-consent" required aria-required="true">
+                <span>Я соглашаюсь с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span>
+              </label>
+              <span class="err">Нужно согласие на обработку данных</span>
+            </div>
+
             <button type="button" class="btn btn-primary btn-submit" id="submit">Отправить заявку <span class="arr">→</span></button>
           </div>
         </div>
@@ -1089,6 +1114,7 @@
         <a href="#pricing">Цены</a>
         <a href="#contact">Связаться</a>
         <a href="https://t.me/alferdmitry" target="_blank" rel="noopener">Telegram</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
       </div>
     </div>
     <div class="footer-copy">© 2026 TalentCo · Dmitrii Balash · Карьерное консультирование и executive search</div>
@@ -1163,7 +1189,9 @@
       TG_CHAT_ID:    '89192985'
     };
 
-    [name,email,msg].forEach(function(el){ el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); el.closest('.form') && hideErr(); }); });
+    [name,email,msg].forEach(function(el){ el.addEventListener('input', function(){ el.closest('.field').classList.remove('invalid'); hideErr(); }); });
+    var consentEl = document.getElementById('i-consent');
+    if (consentEl) consentEl.addEventListener('change', function(){ document.getElementById('f-consent').classList.remove('invalid'); });
 
     function hideErr(){ var e=document.getElementById('form-err'); if(e) e.remove(); }
     function showErr(){
@@ -1181,13 +1209,21 @@
     }
 
     btn.addEventListener('click', function () {
+      // honeypot: если скрытое поле заполнено — это бот. Тихо «успех», ничего не шлём
+      var hp = document.getElementById('i-website');
+      if (hp && hp.value) { success(); return; }
+
+      var consent = document.getElementById('i-consent');
       var ok = true;
       if (!name.value.trim())          { document.getElementById('f-name').classList.add('invalid'); ok=false; }
       if (!re.test(email.value.trim())){ document.getElementById('f-email').classList.add('invalid'); ok=false; }
       if (!msg.value.trim())           { document.getElementById('f-msg').classList.add('invalid'); ok=false; }
+      if (!consent.checked)            { document.getElementById('f-consent').classList.add('invalid'); ok=false; }
       if (!ok) return;
 
-      var data = { name:name.value.trim(), email:email.value.trim(), message:msg.value.trim() };
+      // лёгкая санитизация: убираем угловые скобки и управляющие символы
+      function clean(s){ return s.trim().replace(/[<>]/g,'').replace(/[\u0000-\u001F\u007F]/g,' '); }
+      var data = { name:clean(name.value).slice(0,80), email:clean(email.value).slice(0,120), message:clean(msg.value).slice(0,2000) };
 
       // Демо-режим, пока не вписаны ключи — не ломаем живой сайт
       if (LEADS.WEB3FORMS_KEY.indexOf('YOUR_') === 0 && LEADS.TG_BOT_TOKEN.indexOf('YOUR_') === 0) {
